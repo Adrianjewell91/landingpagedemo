@@ -6,17 +6,14 @@
     border: 0;
 }
 
-
 /* BASIC */
 
 body {
     font: normal 18px/22px "Varela Round", sans-serif;
-    background-color: #e9ffff;
     color: #2e2e2e;
 }
 
-h1,
-h2 {
+h1, h2 {
     font-family: "Signika", sans-serif;
     font-weight: 600;
 }
@@ -37,13 +34,49 @@ p {
     margin: 20px 0;
 }
 
-a:link,
-a:visited,
-a:hover,
-a:active {
+a:link, a:visited, a:hover, a:active {
     text-decoration: none;
 }
 
+header {
+    position: relative;
+    background-color: black;
+    height: 75vh;
+    min-height: 25rem;
+    width: 100%;
+    overflow: hidden;
+}
+
+header video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: 0;
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+}
+
+header .container {
+    position: relative;
+    z-index: 2;
+}
+
+header .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    opacity: 0.5;
+    z-index: 1;
+}
 
 /* LAYOUT */
 
@@ -51,140 +84,10 @@ a:active {
     box-shadow: 0px 0px 3px 0px rgba(50, 50, 50, 0.6);
 }
 
-.content {
-    position: relative;
-    background: #464646 url(59H-from-gratisography.jpg) no-repeat center center fixed;
-    background-size: cover;
-}
-
-.description,
-.some-related-articles {
-    width: 90%;
-    max-width: 960px;
-    margin: 0 auto;
-}
-
-.description {
-    padding-top: 100px;
-    min-height: 250px;
-    text-align: center;
-}
-
-.some-related-articles {
-    color: #747474;
-}
-
-.some-related-articles h1 {
-    color: #384e56;
-    margin-top: 60px;
-    text-transform: uppercase;
-}
-
-.some-related-articles h2 a:link,
-.some-related-articles h2 a:visited {
-    color: #464646;
-    transition: color 0.1s ease;
-}
-
-.some-related-articles h2 a:hover {
-    color: #000000;
-    transition: color 0.3s ease;
-}
-
-
-/* SPECIAL */
-
-.summary {
-    color: #d9dee2;
-    margin-top: 40px;
-    margin-bottom: 60px;
-}
-
-.button,
-.button:visited,
-.button-dark {
-    display: inline-block;
-    max-width: 200px;
-    margin: 50px 10px 30px 10px;
-    padding: 10px;
-    font-family: "Signika", sans-serif;
-    color: #ffffff;
-    background-color: transparent;
-    border: 2px solid #ffffff;
-    border-radius: 3px;
-    text-transform: capitalize;
-    text-align: center;
-    transition: all 0.1s ease;
-}
-
-.button-dark,
-.button-dark:visited {
-    margin: 20px 10px 30px 0;
-    color: #464646;
-    border-color: #464646;
-}
-
-.button:hover,
-.button-dark:hover {
-    transition: all 0.3s ease;
-}
-
-.button:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-}
-
-.button-dark:hover {
-    color: #ffffff;
-    background-color: rgba(70, 70, 70, 0.9);
-}
-
-
-/* Style the video: 100% width and height to cover the entire window */
-
-html {
-    font-size: 16px;
-    font-family: 'Muli', sans-serif;
-    height: 100%;
-}
-
-body {
-    min-height: 100%;
+.fixed-nav-bar>.menu {
     display: flex;
-    justify-content: center;
-    flex-direction: column;
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
+    justify-content: space-between;
 }
-
-p {
-    color: rgb(210, 209, 209);
-    font-weight: lighter;
-}
-
-@media screen and (min-width: 320px) {
-    html {
-        font-size: calc(16px + 6 * ((100vw - 320px) / 680));
-    }
-}
-
-@media screen and (min-width: 1000px) {
-    html {
-        font-size: 22px;
-    }
-}
-
-#myVideo {
-    position: fixed;
-    z-index: -1;
-    right: 0;
-    bottom: 0;
-    min-width: 100%;
-    min-height: 100%;
-    transform: translateX(calc((100% - 100vw) / 2));
-    top: 0;
-}
-
 
 /* Add some content at the bottom of the video/page */
 
@@ -196,7 +99,7 @@ p {
     padding: 20px;
 }
 
-
+*/
 /* Style the button used to pause/play the video */
 
 #myBtn {
@@ -222,9 +125,8 @@ p {
     z-index: 9999;
     width: 100%;
     height: 50px;
-    background-color: #00a087;
+    background-color: black;
 }
-
 
 /* The element at the top of the page right after the fixed navigation bar
    MUST have sufficient top margin or else it will be covered by the bar */
@@ -233,11 +135,9 @@ p {
     margin-top: 20px;
 }
 
-
 /* Example responsive navigation menu  */
 
-.fixed-nav-bar li,
-.fixed-nav-bar a {
+.fixed-nav-bar li, .fixed-nav-bar a {
     height: 50px;
     line-height: 50px;
 }
@@ -248,13 +148,11 @@ p {
     margin: 0 auto;
 }
 
-.menu a,
-.menu a:visited {
+.menu a, .menu a:visited {
     color: #ffffff;
 }
 
-.menu a:hover,
-.menu a:target {
+.menu a:hover, .menu a:target {
     color: #ebebeb;
 }
 
@@ -268,9 +166,8 @@ p {
     margin-left: 10px;
 }
 
-a.sitename,
-a:visited.sitename {
-    color: #e0e0e0;
+a.sitename, a:visited.sitename {
+    color: #e0e0e0 !important;
 }
 
 .menu-items li {
@@ -283,8 +180,7 @@ a:visited.sitename {
     text-decoration: none;
 }
 
-.show,
-.hide {
+.show, .hide {
     display: none;
     padding-left: 15px;
     background-color: transparent;
@@ -316,14 +212,13 @@ a:visited.sitename {
         display: none;
         width: 100%;
         margin-top: 50px;
-        background-color: #008378;
+        background-color: black;
     }
     .menu-items li {
         display: block;
         text-align: center;
     }
-    .show,
-    .hide {
+    .show, .hide {
         position: absolute;
         top: 0;
         right: 15px;
@@ -337,16 +232,13 @@ a:visited.sitename {
     #menu:target .show {
         display: none;
     }
-    #menu:target .hide,
-    #menu:target .menu-items {
+    #menu:target .hide, #menu:target .menu-items {
         display: inline-block;
     }
 }
 
 @media only screen and (max-width: 220px) {
-    .sitename,
-    .show,
-    .hide {
+    .sitename, .show, .hide {
         font-size: 14px;
     }
 }
